@@ -27,7 +27,7 @@ def voice():
 def sms():
     text = request.form.get('Body', '')
     response = twiml.Response()
-    if text == 'help':
+    if text == 'HelpMe':
       response.sms("use 2 letter language code in this format for from and to ' from @to @message'")
     else: 
       text = text.split('@')  
