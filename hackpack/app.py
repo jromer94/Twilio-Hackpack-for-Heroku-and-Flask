@@ -32,8 +32,9 @@ def sms():
       response.sms("use 2 letter language code in this format for from and to ' from @to @message'")
     else: 
       text = text.split('@')  
-      for a in text: 
-        a = a.strip(" ")
+      text[0] = text[0].strip()
+      text[1] = text[1].strip()
+      text[2] = text[2].strip()
       translator = Translator(to_lang=text[1], from_lang=text[0])
       translation = translator.translate(text[2])
       response.sms(translation)
